@@ -221,4 +221,13 @@ class LinkedVMSquareView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LinkedVMSquareView {
+            val view : LinkedVMSquareView = LinkedVMSquareView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
