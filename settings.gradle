@@ -1,0 +1,3 @@
+include ':linkedvmsquareview'
+include ':app'
+rootProject.name = "VMSquareView"
