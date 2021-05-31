@@ -50,11 +50,11 @@ fun Canvas.drawVMSquare(scale : Float, w : Float, h : Float, paint : Paint) {
             drawLine(0f, 0f, -size * sf1, size * sf1, paint)
         }
         if (sf2 > 0) {
-            drawLine(-size, size, -size - size * sf2, -size * sf2, paint)
+            drawLine(-size, size, -size - size * sf2, size - size * sf2, paint)
         }
         save()
         translate(-2 * size * sf4, 0f)
-        drawRect(RectF(-square / 2, -square * sf4, square / 2, 0f), paint)
+        drawRect(RectF(-square / 2, -square * sf3, square / 2, 0f), paint)
         restore()
         restore()
     }
