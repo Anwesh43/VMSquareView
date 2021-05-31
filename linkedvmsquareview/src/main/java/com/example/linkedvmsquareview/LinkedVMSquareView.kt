@@ -196,4 +196,27 @@ class LinkedVMSquareView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LinkedVMSquareView) {
+
+        private val animator : Animator = Animator(view)
+        private val vms : VMSquare = VMSquare(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            vms.draw(canvas, paint)
+            animator.animate {
+                vms.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            vms.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
